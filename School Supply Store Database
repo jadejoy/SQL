@@ -1,0 +1,27 @@
+--Create school supply store database
+
+CREATE TABLE school_supply (id INTEGER PRIMARY KEY, name TEXT, brand TEXT, color TEXT, quantity INTEGER, price NUMERIC, stock INTEGER);
+INSERT INTO school_supply VALUES (1, "pencil pouch", "FIVE STAR", "teal or black", 1, 4.99, 5);
+INSERT INTO school_supply VALUES (2, "wooden pencils", "Ticonderoga", "yellow", 18, 4.39, 20);
+INSERT INTO school_supply VALUES (3, "mechanical pencils", "Bic","assorted", 8, 2.19, 12);
+INSERT INTO school_supply VALUES (4, "erasers", "Pentel", "white", 4, 2.19, 7);
+INSERT INTO school_supply VALUES (5, ".7 mm lead", "Pentel", "graphite", 2, 2.89, 9);
+INSERT INTO school_supply VALUES (6, "ballpoint pens", "Bic", "red", 10, 1.89, 3);
+INSERT INTO school_supply VALUES (7, "ballpoint pens", "Bic", "black", 10, 1.89, 4);
+INSERT INTO school_supply VALUES (8, "ballpoint pens", "Bic", "blue", 10, 1.89, 3);
+INSERT INTO school_supply VALUES (9, "ruler", "Fiskars", "wooden", 1, 0.55, 5);
+INSERT INTO school_supply VALUES (10, "colored pencils", "Crayola", "assorted", 24, 3.29, 6);
+INSERT INTO school_supply VALUES (11, "dry erase markers", "Expo", "assorted", 10, 11.99, 4);
+INSERT INTO school_supply VALUES (12, "composition notebook", "Five Star", "assorted", 1, 2.89, 12);
+INSERT INTO school_supply VALUES (13, "spiral notebook", "Five Star", "assorted", 1, 3.39, 9);
+INSERT INTO school_supply VALUES (14, "4 pocket folder", "Five Star", "assorted", 1, 1.59, 5);
+INSERT INTO school_supply VALUES (15, "scientific calculator", "Texas Instruments", "black TI-30Xa", 1, 10.89, 4);
+
+--order supplies by price
+SELECT * from school_supply ORDER BY price;
+
+--view supplies by item, brand and ordered by price
+SELECT name, brand, price from school_supply ORDER BY price;
+
+--total cost of purchasing all supplies ( 1 of each item)
+SELECT Sum(price) from school_supply
